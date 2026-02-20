@@ -7,7 +7,8 @@ from models import db
 def create_app():
     # Tell Flask that 'public' is both the static folder and template folder
     app = Flask(__name__, static_folder='public', static_url_path='')
-    CORS(app)
+    # Allow all origins for the API routes
+    CORS(app, resources={r"/api/*": {"origins": "*"}})
     
     # Configuration
     basedir = os.path.abspath(os.path.dirname(__file__))

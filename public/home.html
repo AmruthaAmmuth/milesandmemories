@@ -109,7 +109,7 @@
             } else {
                 // Fetch latest profile to get partner info
                 const token = localStorage.getItem('token');
-                fetch('/api/users/profile', {
+                fetch(`${window.API_BASE_URL}/api/users/profile`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 })
                     .then(res => res.json())
