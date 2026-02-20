@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary - Miles & Memories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .diary-entry {
+            background: #fafafa;
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+        }
+
+        .diary-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container fade-in">
+        <div style="margin-bottom: 2rem;">
+            <a href="/home.html" style="color: var(--text-light); text-decoration: none;">&larr; Back to Home</a>
+        </div>
+
+        <h1>My Diary</h1>
+
+        <div class="card">
+            <form id="diary-form">
+                <div class="form-group">
+                    <label for="diary-text">What's on your mind today?</label>
+                    <textarea id="diary-text" rows="5" required placeholder="Write your thoughts here..."></textarea>
+                </div>
+                <button type="submit" class="btn">Save Entry</button>
+            </form>
+        </div>
+
+        <div id="diary-timeline">
+            <!-- Diary entries will be loaded here -->
+        </div>
+    </div>
+
+    <script src="/js/diary.js"></script>
+</body>
+
+</html>

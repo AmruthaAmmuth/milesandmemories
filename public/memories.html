@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories - Miles & Memories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .memory-card {
+            background: #fafafa;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .memory-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .memory-label {
+            padding: 0.5rem;
+            text-align: center;
+            font-weight: 500;
+            color: var(--text-main);
+            background: var(--primary-color);
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .file-input-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .btn-upload {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        #image-preview {
+            display: none;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container fade-in">
+        <div style="margin-bottom: 2rem;">
+            <a href="/home.html" style="color: var(--text-light); text-decoration: none;">&larr; Back to Home</a>
+        </div>
+
+        <h1>Lovely Memories</h1>
+
+        <div class="card">
+            <form id="memory-form" enctype="multipart/form-data">
+                <div class="file-input-wrapper">
+                    <button type="button" class="btn-upload">Choose an Image</button>
+                    <input type="file" id="memory-image" accept="image/*" required>
+                </div>
+                <img id="image-preview" src="" alt="Image Preview">
+
+                <div class="form-group" style="margin-top: 1rem;">
+                    <label for="memory-category">Category</label>
+                    <select id="memory-category"
+                        style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ddd;">
+                        <option value="Lovely">Lovely Moment</option>
+                        <option value="Golden">Golden Memory</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn">Upload Memory</button>
+            </form>
+        </div>
+
+        <div class="memory-grid" id="memory-gallery">
+            <!-- Memories will load here -->
+        </div>
+    </div>
+
+    <script src="/js/memories.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Miles & Memories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .event-card {
+            background: #fff;
+            border: 1px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .event-details h3 {
+            margin-bottom: 0.2rem;
+            color: var(--text-main);
+        }
+
+        .event-date {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .btn-delete {
+            background-color: transparent;
+            color: #ff6b6b;
+            border: 1px solid #ff6b6b;
+            padding: 0.4rem 0.8rem;
+        }
+
+        .btn-delete:hover {
+            background-color: #ff6b6b;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container fade-in">
+        <div style="margin-bottom: 2rem;">
+            <a href="/home.html" style="color: var(--text-light); text-decoration: none;">&larr; Back to Home</a>
+        </div>
+
+        <h1>Upcoming Events</h1>
+
+        <div class="card">
+            <h2>Add New Event</h2>
+            <form id="event-form">
+                <div class="form-group">
+                    <label>Event Title</label>
+                    <input type="text" id="event-title" required placeholder="Movie night, Anniversary...">
+                </div>
+                <div class="form-group">
+                    <label>Date & Time</label>
+                    <input type="datetime-local" id="event-date" required>
+                </div>
+                <div class="form-group">
+                    <label>Description (optional)</label>
+                    <textarea id="event-desc" rows="2" placeholder="Plan details..."></textarea>
+                </div>
+                <button type="submit" class="btn">Save Event</button>
+            </form>
+        </div>
+
+        <div id="events-list">
+            <!-- Events will load here -->
+        </div>
+    </div>
+
+    <script src="/js/events.js"></script>
+</body>
+
+</html>

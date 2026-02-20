@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Miles & Memories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .settings-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .settings-header a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.4rem;
+        }
+
+        .settings-header h1 {
+            margin: 0;
+            font-size: 1.6rem;
+        }
+
+        .setting-section {
+            margin-bottom: 2rem;
+        }
+
+        .setting-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color, #eee);
+        }
+
+        .code-display {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--secondary-color, #f5f0eb);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .code-display span {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: var(--primary-color);
+            flex: 1;
+        }
+
+        .code-display .copy-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .code-display .copy-btn:hover {
+            background: rgba(0,0,0,0.06);
+        }
+
+        .partner-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.85rem 1rem;
+            background: #e8f4e8;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .partner-badge .partner-icon {
+            font-size: 1.5rem;
+        }
+
+        .partner-badge .partner-info strong {
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .partner-badge .partner-info span {
+            font-size: 0.8rem;
+            color: #4caf50;
+        }
+
+        .btn-danger {
+            background-color: #fff0f0;
+            color: #e53935;
+            border: 1px solid #ffc9c9;
+        }
+
+        .btn-danger:hover {
+            background-color: #ffe0e0;
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .input-row input {
+            flex: 1;
+        }
+
+        #status-msg {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            min-height: 1.2rem;
+        }
+
+        #status-msg.success { color: #4caf50; }
+        #status-msg.error   { color: #e53935; }
+    </style>
+</head>
+
+<body>
+    <div class="container fade-in">
+        <div class="settings-header">
+            <a href="/home.html" title="Back">←</a>
+            <h1>⚙️ Settings</h1>
+        </div>
+
+        <div class="card">
+            <!-- Password Section (placeholder) -->
+            <div class="setting-section">
+                <h3>🔒 Password</h3>
+                <p style="color: var(--text-light); font-size: 0.9rem;">
+                    Password changes are managed through account registration. Contact support to reset.
+                </p>
+            </div>
+
+            <!-- Couple Code Section -->
+            <div class="setting-section">
+                <h3>💑 Couple Code</h3>
+
+                <!-- Linked state -->
+                <div id="linked-view" class="hidden">
+                    <div class="partner-badge">
+                        <span class="partner-icon">💞</span>
+                        <div class="partner-info">
+                            <strong id="partner-name-display">Partner</strong>
+                            <span>Linked as couple</span>
+                        </div>
+                    </div>
+                    <button id="unlink-btn" class="btn btn-danger btn-sm">Unlink Partner</button>
+                </div>
+
+                <!-- Unlinked state -->
+                <div id="unlinked-view">
+                    <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">
+                        Share your couple code with your partner. When they enter it, you'll both be linked and share your diary, memories, events &amp; messages.
+                    </p>
+
+                    <!-- Your code -->
+                    <div id="code-box" class="code-display hidden">
+                        <span id="couple-code-text">——————</span>
+                        <button class="copy-btn" id="copy-btn" title="Copy code">📋</button>
+                    </div>
+                    <button id="generate-btn" class="btn btn-sm" style="margin-bottom: 1.25rem;">✨ Generate My Code</button>
+
+                    <!-- Join with partner's code -->
+                    <p style="font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Enter partner's code:</p>
+                    <div class="input-row">
+                        <input type="text" id="join-code-input" placeholder="e.g. A1B2C3" maxlength="6"
+                            style="text-transform: uppercase; letter-spacing: 0.1em;">
+                        <button id="join-btn" class="btn btn-sm">Link 💞</button>
+                    </div>
+                </div>
+
+                <p id="status-msg"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/settings.js"></script>
+</body>
+
+</html>

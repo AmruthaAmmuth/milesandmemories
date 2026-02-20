@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thinking of You - Miles & Memories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .message-card {
+            background: var(--card-bg);
+            border: 1px solid var(--secondary-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .message-text {
+            font-size: 1.2rem;
+            color: var(--text-main);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .message-time {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .quick-reply-btn {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--primary-color);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all var(--transition-speed);
+        }
+
+        .quick-reply-btn:hover {
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container fade-in">
+        <div style="margin-bottom: 2rem;">
+            <a href="/home.html" style="color: var(--text-light); text-decoration: none;">&larr; Back to Home</a>
+        </div>
+
+        <h1>Thinking of You</h1>
+
+        <div class="card">
+            <form id="message-form">
+                <label style="display: block; margin-bottom: 1rem; font-weight: 500;">Send a Quick Thought</label>
+
+                <div class="quick-replies">
+                    <button type="button" class="quick-reply-btn">You crossed my mind and I smiled.</button>
+                    <button type="button" class="quick-reply-btn">Distance is long, but you're close to my
+                        heart.</button>
+                    <button type="button" class="quick-reply-btn">Just a little reminder that you matter.</button>
+                    <button type="button" class="quick-reply-btn">Thinking of you right now.</button>
+                    <button type="button" class="quick-reply-btn">Sending warmth your way.</button>
+                </div>
+
+                <div class="form-group">
+                    <textarea id="message-text" rows="3" required placeholder="Or type your own message..."></textarea>
+                </div>
+                <button type="submit" class="btn">Send Thought</button>
+            </form>
+        </div>
+
+        <h2>Sent Messages</h2>
+        <div id="messages-list">
+            <!-- Messages will load here -->
+        </div>
+    </div>
+
+    <script src="/js/messages.js"></script>
+</body>
+
+</html>
