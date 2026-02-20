@@ -7,8 +7,8 @@ from models import db
 def create_app():
     # Tell Flask that 'public' is both the static folder and template folder
     app = Flask(__name__, static_folder='public', static_url_path='')
-    # Allow all origins for the API routes
-    CORS(app, resources={r"/api/*": {"origins": "*"}})
+    # Broaden CORS to handle all routes and common headers
+    CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
     
     # Configuration
     basedir = os.path.abspath(os.path.dirname(__file__))
@@ -39,6 +39,11 @@ def create_app():
     app.register_blueprint(event_bp, url_prefix='/api/events')
     app.register_blueprint(message_bp, url_prefix='/api/messages')
     
+    # Health Check Endpoint
+    @app.route('/api/health')
+    def health_check():
+        return jsonify({"status": "healthy", "service": "Miles & Memories Backend"}), 200
+
     # Serve the frontend: root -> index.html, all other unknown paths -> index.html
     @app.route('/')
     def serve_index():
