@@ -5,14 +5,21 @@ from flask_jwt_extended import JWTManager
 from models import db
 
 def create_app():
-    # Tell Flask that 'public' is both the static folder and template folder
+    print("Initializing Flask App...")
     app = Flask(__name__, static_folder='public', static_url_path='')
-    # Broaden CORS to handle all routes and common headers
-    CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+    # Simple CORS to avoid credentials mismatch issues
+    CORS(app)
     
     # Configuration
     basedir = os.path.abspath(os.path.dirname(__file__))
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'app.db')
+    
+    # Render provides DATABASE_URL for Postgres. 
+    # SQLAlchemy requires 'postgresql://' instead of 'postgres://' if that happens.
+    db_url = os.environ.get('DATABASE_URL')
+    if db_url and db_url.startswith("postgres://"):
+        db_url = db_url.replace("postgres://", "postgresql://", 1)
+        
+    app.config['SQLALCHEMY_DATABASE_URI'] = db_url or ('sqlite:///' + os.path.join(basedir, 'app.db'))
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['JWT_SECRET_KEY'] = 'miles_and_memories_secret_key_2024'
     app.config['UPLOAD_FOLDER'] = os.path.join(basedir, 'public', 'uploads')
@@ -60,10 +67,13 @@ def create_app():
         
     return app
 
+print("Creating app instance...")
 app = create_app()
 
 with app.app_context():
-    db.create_all()  # Auto-creates SQLite tables
+    print("Running db.create_all()...")
+    db.create_all()
+    print("Database initialization complete.")
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

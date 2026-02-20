@@ -72,10 +72,17 @@ pip install -r requirements.txt
 python app.py
 ```
 
-#### Deployment (Render)
-For hosting on Render:
-- **Build Command:** `pip install -r requirements.txt`
-- **Start Command:** `gunicorn app:app`
+#### Render Deployment (Backend)
+1. **Build Command:** `pip install -r requirements.txt`
+2. **Start Command:** `gunicorn app:app`
+3. **Persistent Database (CRITICAL):**
+   - In Render, click **"New"** -> **"PostgreSQL"**.
+   - Create the database and wait for it to be available.
+   - Go to your Web Service (Backend) -> **"Environment"**.
+   - Click **"Add Environment Variable"**.
+   - Key: `DATABASE_URL`, Value: Select your Postgres database from the dropdown (or paste the "Internal Database URL").
+   - Click **"Add Environment Variable"**.
+   - Key: `PYTHON_VERSION`, Value: `3.14.3` (matching your logs).
 
 ---
 
