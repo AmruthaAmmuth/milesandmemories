@@ -64,7 +64,7 @@ python -m venv venv
 .\venv\Scripts\activate  # On Windows
 
 # Install dependencies
-pip install flask flask-sqlalchemy flask-cors flask-jwt-extended
+pip install -r requirements.txt
 ```
 
 #### Run
