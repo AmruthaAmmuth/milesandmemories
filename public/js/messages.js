@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load messages
     const loadMessages = async () => {
         try {
-            const res = await fetch('/api/messages', {
+            const res = await fetch(`${window.API_BASE_URL}/api/messages`, {
                 headers: { 'Authorization': 'Bearer ' + token }
             });
             const messages = await res.json();
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const text = messageInput.value;
 
             try {
-                const res = await fetch('/api/messages', {
+                const res = await fetch(`${window.API_BASE_URL}/api/messages`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

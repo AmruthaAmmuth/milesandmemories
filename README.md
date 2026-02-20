@@ -13,7 +13,7 @@
 - Member 2: [MUFEENA F] - [College of Engineering, Attingal]
 
 ### Hosted Project Link
-[mention your project ho]
+[https://milesandmemories.vercel.app/](https://milesandmemories.vercel.app/)
 
 ### Project Description
 [A private digital journal for hearts that stay connected, miles apart. It’s a shared space where couples can write entries, upload photos, and create a timeline of their journey together, ensuring memories never fade.]
@@ -141,7 +141,7 @@ For hosting on Render:
 
 #### API Documentation
 
-**Base URL:** `https://api.yourproject.com`
+**Base URL:** `https://milesandmemories.onrender.com` (Note: Update with your specific Render subdomain)
 
 ##### Endpoints
 

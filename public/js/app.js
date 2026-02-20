@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('login-password').value;
             console.log('Login attempt:', { email, password });
             try {
-                const res = await fetch('/api/auth/login', {
+                const res = await fetch(`${window.API_BASE_URL}/api/auth/login`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email, password })
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const coupleCode = document.getElementById('signup-couple-code').value.trim().toUpperCase();
             console.log('Signup attempt:', { name, email, password, coupleCode });
             try {
-                const res = await fetch('/api/auth/register', {
+                const res = await fetch(`${window.API_BASE_URL}/api/auth/register`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, email, password, couple_code: coupleCode })

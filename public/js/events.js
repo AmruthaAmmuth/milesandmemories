@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load events
     const loadEvents = async () => {
         try {
-            const res = await fetch('/api/events', {
+            const res = await fetch(`${window.API_BASE_URL}/api/events`, {
                 headers: { 'Authorization': 'Bearer ' + token }
             });
             const events = await res.json();
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const description = document.getElementById('event-desc').value;
 
             try {
-                const res = await fetch('/api/events', {
+                const res = await fetch(`${window.API_BASE_URL}/api/events`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.deleteEvent = async (id) => {
         if (!confirm('Are you sure you want to delete this event?')) return;
         try {
-            const res = await fetch(`/api/events/${id}`, {
+            const res = await fetch(`${window.API_BASE_URL}/api/events/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': 'Bearer ' + token }
             });

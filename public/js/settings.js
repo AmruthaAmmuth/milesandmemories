@@ -2,17 +2,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     const token = localStorage.getItem('token');
     if (!token) { window.location.href = '/'; return; }
 
-    const linkedView   = document.getElementById('linked-view');
+    const linkedView = document.getElementById('linked-view');
     const unlinkedView = document.getElementById('unlinked-view');
-    const codeBox      = document.getElementById('code-box');
-    const codeText     = document.getElementById('couple-code-text');
-    const partnerName  = document.getElementById('partner-name-display');
-    const statusMsg    = document.getElementById('status-msg');
-    const generateBtn  = document.getElementById('generate-btn');
-    const copyBtn      = document.getElementById('copy-btn');
-    const joinBtn      = document.getElementById('join-btn');
-    const unlinkBtn    = document.getElementById('unlink-btn');
-    const joinInput    = document.getElementById('join-code-input');
+    const codeBox = document.getElementById('code-box');
+    const codeText = document.getElementById('couple-code-text');
+    const partnerName = document.getElementById('partner-name-display');
+    const statusMsg = document.getElementById('status-msg');
+    const generateBtn = document.getElementById('generate-btn');
+    const copyBtn = document.getElementById('copy-btn');
+    const joinBtn = document.getElementById('join-btn');
+    const unlinkBtn = document.getElementById('unlink-btn');
+    const joinInput = document.getElementById('join-code-input');
 
     function setStatus(msg, type = 'success') {
         statusMsg.textContent = msg;
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     async function loadProfile() {
-        const res = await fetch('/api/users/profile', { headers: authHeaders() });
+        const res = await fetch(`${window.API_BASE_URL}/api/users/profile`, { headers: authHeaders() });
         if (!res.ok) { window.location.href = '/'; return; }
         const user = await res.json();
 
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     generateBtn.addEventListener('click', async () => {
         generateBtn.disabled = true;
         generateBtn.textContent = 'Generating…';
-        const res = await fetch('/api/users/couple/generate', {
+        const res = await fetch(`${window.API_BASE_URL}/api/users/couple/generate`, {
             method: 'POST', headers: authHeaders()
         });
         const data = await res.json();
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!code || code.length < 4) { setStatus('Please enter a valid code', 'error'); return; }
         joinBtn.disabled = true;
         joinBtn.textContent = 'Linking…';
-        const res = await fetch('/api/users/couple/join', {
+        const res = await fetch(`${window.API_BASE_URL}/api/users/couple/join`, {
             method: 'POST',
             headers: authHeaders(),
             body: JSON.stringify({ couple_code: code })
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Unlink
     unlinkBtn.addEventListener('click', async () => {
         if (!confirm('Are you sure you want to unlink from your partner?')) return;
-        const res = await fetch('/api/users/couple/unlink', {
+        const res = await fetch(`${window.API_BASE_URL}/api/users/couple/unlink`, {
             method: 'DELETE', headers: authHeaders()
         });
         const data = await res.json();

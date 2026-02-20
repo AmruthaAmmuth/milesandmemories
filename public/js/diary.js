@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load entries
     const loadEntries = async () => {
         try {
-            const res = await fetch('/api/diary', {
+            const res = await fetch(`${window.API_BASE_URL}/api/diary`, {
                 headers: { 'Authorization': 'Bearer ' + token }
             });
             const entries = await res.json();
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const text = document.getElementById('diary-text').value;
 
             try {
-                const res = await fetch('/api/diary', {
+                const res = await fetch(`${window.API_BASE_URL}/api/diary`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

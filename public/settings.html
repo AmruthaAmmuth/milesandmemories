@@ -7,6 +7,7 @@
     <title>Settings - Miles & Memories</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/config.js"></script>
     <style>
         .settings-header {
             display: flex;
@@ -70,7 +71,7 @@
         }
 
         .code-display .copy-btn:hover {
-            background: rgba(0,0,0,0.06);
+            background: rgba(0, 0, 0, 0.06);
         }
 
         .partner-badge {
@@ -127,8 +128,13 @@
             min-height: 1.2rem;
         }
 
-        #status-msg.success { color: #4caf50; }
-        #status-msg.error   { color: #e53935; }
+        #status-msg.success {
+            color: #4caf50;
+        }
+
+        #status-msg.error {
+            color: #e53935;
+        }
     </style>
 </head>
 
@@ -167,7 +173,8 @@
                 <!-- Unlinked state -->
                 <div id="unlinked-view">
                     <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">
-                        Share your couple code with your partner. When they enter it, you'll both be linked and share your diary, memories, events &amp; messages.
+                        Share your couple code with your partner. When they enter it, you'll both be linked and share
+                        your diary, memories, events &amp; messages.
                     </p>
 
                     <!-- Your code -->
@@ -175,7 +182,8 @@
                         <span id="couple-code-text">——————</span>
                         <button class="copy-btn" id="copy-btn" title="Copy code">📋</button>
                     </div>
-                    <button id="generate-btn" class="btn btn-sm" style="margin-bottom: 1.25rem;">✨ Generate My Code</button>
+                    <button id="generate-btn" class="btn btn-sm" style="margin-bottom: 1.25rem;">✨ Generate My
+                        Code</button>
 
                     <!-- Join with partner's code -->
                     <p style="font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Enter partner's code:</p>

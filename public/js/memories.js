@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load Memories
     const loadMemories = async () => {
         try {
-            const res = await fetch('/api/memories', {
+            const res = await fetch(`${window.API_BASE_URL}/api/memories`, {
                 headers: { 'Authorization': 'Bearer ' + token }
             });
             const memories = await res.json();
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.append('category', category);
 
             try {
-                const res = await fetch('/api/memories', {
+                const res = await fetch(`${window.API_BASE_URL}/api/memories`, {
                     method: 'POST',
                     headers: {
                         'Authorization': 'Bearer ' + token
