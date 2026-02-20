@@ -141,7 +141,7 @@ For hosting on Render:
 
 #### API Documentation
 
-**Base URL:** `https://milesandmemories.onrender.com` (Note: Update with your specific Render subdomain)
+**Base URL:** `https://milesandmemories-0st4.onrender.com`
 
 ##### Endpoints
 

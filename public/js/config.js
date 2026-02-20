@@ -1,7 +1,6 @@
 const CONFIG = {
     // ⚠️ IMPORTANT: Replace this with your ACTUAL Render URL from the Dashboard
-    // Example: 'https://milesandmemories.onrender.com'
-    API_BASE_URL: 'https://milesandmemories.onrender.com'
+    API_BASE_URL: 'https://milesandmemories-0st4.onrender.com'
 };
 
 // Ensure no trailing slash for consistency
