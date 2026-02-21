@@ -219,9 +219,9 @@ If you used AI tools during development, document them here for transparency:
 
 ## Team Contributions
 
-- [Name 1]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Name 2]: [Specific contributions - e.g., Backend development, Database design, etc.]
-- [Name 3]: [Specific contributions - e.g., UI/UX design, Testing, Documentation, etc.]
+- [Amritha manoj]: [Specific contributions -  Frontend development, API integration, ]
+- [Mufeena F]: [Specific contributions -  Backend development, Database design, etc.]
+
 
 ---
 
