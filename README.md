@@ -94,13 +94,16 @@ python app.py
 
 #### Screenshots (Add at least 3)
 
-![1000165342.png](Login page)
+<img width="875" height="1004" alt="1000165342" src="https://github.com/user-attachments/assets/b18c068e-d09e-422d-8337-04a560612770" />
+
 Login page, where we could create our account using details like name, email and password.
 
-![1000165343.png](Home page)
+<img width="839" height="830" alt="1000165343" src="https://github.com/user-attachments/assets/a49491f4-11dd-4a96-82ca-0605eba7ba87" />
+
 home page where we could see the 4 features of the app.
 
-![1000165344.png](Settings page)
+<img width="854" height="803" alt="1000165344" src="https://github.com/user-attachments/assets/74bb8e18-3983-4ccf-9f42-94d211f23cbb" />
+
 The setting page where we could see the couple code to share to the other partner or pasting already existing couple code.it will show invalid msg 3 person enter the same couple code.
 
 #### Diagrams
@@ -179,13 +182,8 @@ The setting page where we could see the couple code to share to the other partne
 ## Project Demo
 
 ### Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
 
-*Explain what the video demonstrates - key features, user flow, technical highlights*
-
-### Additional Demos
-[Add any extra demo materials/links - Live site, APK download, online demo, etc.]
-
+https://drive.google.com/file/d/1gehYxf-L3FtQYGfH_mwnq8Tub7iRSvIW/view?usp=sharing
 ---
 
 ## AI Tools Used (Optional - For Transparency Bonus)
