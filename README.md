@@ -2,7 +2,7 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# [Miles & Memories] 🎯
 
 ## Basic Details
 
@@ -94,14 +94,14 @@ python app.py
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![1000165342.png](Login page)
+Login page, where we could create our account using details like name, email and password.
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![1000165343.png](Home page)
+home page where we could see the 4 features of the app.
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![1000165344.png](Settings page)
+The setting page where we could see the couple code to share to the other partner or pasting already existing couple code.it will show invalid msg 3 person enter the same couple code.
 
 #### Diagrams
 
