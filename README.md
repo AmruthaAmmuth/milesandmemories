@@ -107,12 +107,12 @@ The setting page where we could see the couple code to share to the other partne
 
 **System Architecture:**
 
-![Architecture Diagram](docs/architecture.png)
+
 *The app uses a Flask backend with a SQLite database, serving a responsive HTML/JS/CSS frontend. JWT is used for secure authentication.*
 
 **Application Workflow:**
 
-![Workflow](docs/workflow.png)
+![Workflow.png](docs/workflow.png)
 *Add caption explaining your workflow*
 
 ---
@@ -129,8 +129,7 @@ The setting page where we could see the couple code to share to the other partne
 
 #### Build Photos
 
-![Team](Add photo of your team here)
-
+<img src="/team.jpg" alt="Project Banner" width="100%">
 ![Components](Add photo of your components here)
 *List out all components shown*
 
@@ -148,7 +147,7 @@ The setting page where we could see the couple code to share to the other partne
 
 #### API Documentation
 
-**Base URL:** `https://milesandmemories-0st4.onrender.com`
+**Base URL:** `.onrhttps://milesandmemories-0st4ender.com`
 
 ##### Endpoints
 
